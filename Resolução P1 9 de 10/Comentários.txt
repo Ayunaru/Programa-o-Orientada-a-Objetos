@@ -1,0 +1,17 @@
+Relatório de avaliação
+- Questão 1:
+  - classe Motor.java: ( 1,5/2,0)
+  - encapsulamento(ok) , sobrecarga (não), geters e seters(ok):
+  - Problemas:
+
+  - classe Aviao.java: ( 5,5/6,0)
+  - Alocação do tamanho do array de Motor? (ok)
+  - Alocação dos objetos de Motor? (ok)
+  - Encapsulamento (ok), sobrecarga (não), geters e seters (ok):
+  - Problemas: nenhum
+
+- Questão 2:
+  - classe Piloto.java: ( 2,0 /2,0)
+  - Instanciou objetos? ok
+  - Mensagens para os objetos? ok
+  - Problemas: nenhum
