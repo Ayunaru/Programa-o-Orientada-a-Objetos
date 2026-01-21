@@ -1,0 +1,43 @@
+/*Exemplo dos desenhos dos veículos*/
+    
+/* motocicleta com os dois pneus descalibrados + tanque e/ou bateria carregados*/
+   ,_oo
+.-/c //::  
+(x)'==(x)
+
+/* motocicleta com os dois pneus calibrados + tanque e bateria descarregados*/
+   ,_oo
+.-/x-//::  
+( )'==( )
+
+/* moto com os dois pneus cheios + tanque e/ou bateria carregados*/
+   ,_oo
+.-/c-//::  
+( )'==( )
+
+/* carro passeio com um/dois pneus traseiros descalibrados e pneus dianteiros
+calibrados + tanque e/ou bateria carregados*/
+    ____
+ __/  |_\_
+| c_     _``-.
+'-(x)---(_)--'
+*/
+
+/*  bike com os dois pneus calibrados*/
+   __o    
+ _`\<,_
+(*)/ (*)
+
+/* carro esportivo com todos os pneus calibrados + tanque e/ou bateria carregados*/ 
+            _______
+          _/\______\\__
+         / ,-.c-|-  ,-.`-.
+         `( o )----( o )-'
+           `-'      `-'
+
+/* carro esportivo com um/dois pneus dianteiros descalibrados + tanque e bateria descarregados*/ 
+            _______
+          _/\______\\__
+         / ,-.x-|-  ,-.`-.
+         `( o )----( x )-'
+           `-'      `-'

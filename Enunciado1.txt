@@ -1,0 +1,35 @@
+# 🏎️ Simulador de Corrida: Veículos Híbridos e Não-Motorizados
+
+Este projeto consiste em um simulador de corrida desenvolvido em **Java**, focado na aplicação prática dos pilares da **Programação Orientada a Objetos (POO)**. O sistema gerencia diferentes tipos de veículos, seus estados mecânicos e a lógica de consumo de recursos em pista.
+
+## 📋 Sobre o Projeto
+O objetivo foi arquitetar uma hierarquia de classes robusta para simular um grid de largada e a movimentação de veículos, respeitando restrições físicas (como calibragem de pneus e níveis de combustível/bateria).
+
+### 🛠️ Conceitos Técnicos Aplicados
+* **Herança e Polimorfismo:** Implementação de classes concretas e abstratas.
+* **Interfaces e Herança Múltipla:** Definição de contratos de implementação.
+* **Composição e Agregação:** Relação entre objetos (ex: Veículo "tem um" Motor).
+* **Encapsulamento:** Proteção de atributos e acesso via Getters/Setters.
+* **Sobrecarga e Sobrescrita:** Customização de comportamentos herdados.
+
+## ⚙️ Regras de Negócio e Funcionalidades
+
+### 1. Sistema de Inicialização e Aleatoriedade
+Ao instanciar os veículos (Bicicletas, Motocicletas, Carros Populares, Esportivos e Híbridos), o sistema gera estados iniciais dinâmicos:
+* **Pneus:** A calibragem é definida via sorteio randômico.
+* **Energia (Híbridos):** Níveis de tanque de combustível e carga da bateria são inicializados aleatoriamente.
+
+### 2. Mecânica de Movimento e Restrições
+Para garantir o realismo da simulação, foram implementadas validações de estado:
+* **Checagem de Pneus:** Um veículo só pode iniciar movimento se todos os pneus estiverem devidamente calibrados.
+* **Consumo Híbrido:** Veículos híbridos (Elétrico + Combustão) possuem lógica de consumo duplo. O deslocamento impacta simultaneamente a bateria e o combustível, exigindo que ambos tenham carga positiva para a locomoção.
+
+### 3. Motor de Simulação (`Simulador.java`)
+* Gerencia um *array* estático de competidores (até 10 instâncias).
+* Responsável pela renderização visual da pista no console, desenhando cada veículo conforme seu status atual (nível de energia, desgaste, etc).
+
+### 4. Execução (`UsaSimulador.java`)
+* Classe driver responsável por instanciar o ambiente de simulação e executar os ciclos de processamento sem necessidade de interação manual (input) do usuário.
+
+---
+*Este projeto foi desenvolvido como requisito avaliativo na disciplina de Programação Orientada a Objetos.*
