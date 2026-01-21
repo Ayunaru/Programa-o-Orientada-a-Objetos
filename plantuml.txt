@@ -1,0 +1,118 @@
+@startuml
+
+' Configurações visuais para deixar com cara profissional
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam linetype ortho
+
+' --- Interfaces ---
+
+interface Desenhável {
+    + {abstract} desenhoBicicleta: String
+    + {abstract} desenhoMotocicleta: String
+    + {abstract} desenhoCarroPasseio: String
+    + {abstract} desenhoCarroEsportivo: String
+    + desenhar(distanciaPercorrida: int): void
+}
+
+interface Calibrável {
+    + {static} calibragemPneuBicicleta: float = 1.23
+    + {static} calibragemPneuMotocicleta: float = 31.5
+    + {static} calibragemPneuCarroPasseio: float = 32.3
+    + {static} calibragemPneuCarroEsportivo: float = 38.7
+    + calibrar(): void
+    + calibrar(i: int): void
+}
+
+interface Recarregável {
+    + carregar(): void
+}
+
+interface Reabastecível {
+    + abastecer(): void
+}
+
+' --- Classes Principais ---
+
+class usaSimulador {
+    + {static} main(args: String[]): void
+}
+
+class Simulador {
+    - veiculos: Veículo[]
+    + incluirVeiculo(): void
+    + removerVeiculo(id: int): void
+    + moverVeiculos(tipo: String): void
+    + moverVeiculos(): void
+}
+
+class Roda {
+    - calibrado: Boolean
+    + Roda()
+    + setCalibragem(): void
+    + getCalibragem(): Boolean
+    + toString(): String
+}
+
+class Motor {
+    - giroAtual: int = 0
+    - cilindrada: float
+    - modo: String
+    - {static} fatorConsumoCombustao: float = 0.001
+    - {static} fatorConsumoEletrico: float = 0.0001
+    + Motor()
+    + acelerar(intensidade: int): void
+}
+
+' --- Classes Abstratas e Herança ---
+
+abstract class Veículo {
+    - id: int
+    - distanciaPercorrida: int
+    - quantidadeRodas: int
+    - rodas: Roda[]
+    + Veículo()
+    + {abstract} mover(): void
+    + {abstract} desenhar(): void
+    + calibrarPneu(int): void
+    + toString(): String
+}
+
+abstract class VeículoHíbrido {
+    - tanqueCombustivel: float = 0
+    - nivelBateria: int = 0
+    + VeículoMotorizado()
+    + toString(): String
+}
+
+' --- Classes Concretas ---
+
+class Bicicleta
+class Motocicleta
+class CarroPasseio
+class CarroEsportivo
+
+' --- Relacionamentos ---
+
+' Dependência
+usaSimulador ..> Simulador : usa
+
+' Agregação e Composição
+Simulador "1" o-- "1..10" Veículo : armazena
+Veículo "1" *-- "2..4" Roda : possui
+VeículoHíbrido "1" --> "1" Motor : possui (propulsor)
+
+' Herança (Extends)
+Veículo <|-- Bicicleta
+Veículo <|-- VeículoHíbrido
+VeículoHíbrido <|-- Motocicleta
+VeículoHíbrido <|-- CarroPasseio
+VeículoHíbrido <|-- CarroEsportivo
+
+' Implementação (Implements)
+Desenhável <|.. Veículo
+Calibrável <|.. Veículo
+Recarregável <|.. VeículoHíbrido
+Reabastecível <|.. VeículoHíbrido
+
+@enduml
